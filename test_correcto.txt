@@ -1,0 +1,6 @@
+BEGIN
+MAKE TABLE usuarios WITH [nombre CHARS, edad INTS];
+PICK nombre, edad FROM usuarios WHEN edad > 30;
+MODIFY usuarios SET edad = 35 WHERE nombre = 'Juan';
+REMOVE TABLE usuarios PERMANENTLY;
+END

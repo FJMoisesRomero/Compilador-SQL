@@ -1,0 +1,13 @@
+BEGIN
+// Este es un ejemplo con errores sintácticos
+// Error: falta el punto y coma al final
+MAKE TABLE usuarios WITH [nombre CHARS, edad INTS]
+// Error: falta la palabra FROM
+PICK nombre, edad usuarios WHEN edad > 30;
+// Error: falta la palabra SET
+MODIFY usuarios edad = 35 WHERE nombre = 'Juan';
+// Error: falta la palabra PERMANENTLY
+REMOVE TABLE usuarios;
+// Error: falta el corchete de cierre
+MAKE TABLE empleados WITH [nombre CHARS, salario INTS;
+END

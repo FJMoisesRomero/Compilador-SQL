@@ -1,0 +1,11 @@
+BEGIN
+// Este es un ejemplo con errores léxicos
+MAKE TABLE usuarios WITH [nombre CHARS, edad INTS];
+PICK nombre, edad FROM usuarios WHEN edad > 30;
+// Error léxico: carácter inválido @
+MODIFY usuarios SET edad = @35 WHERE nombre = 'Juan';
+// Error léxico: carácter inválido #
+REMOVE TABLE usuarios# PERMANENTLY;
+// Error léxico: carácter inválido $
+PICK nombre$, edad FROM usuarios;
+END

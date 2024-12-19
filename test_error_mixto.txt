@@ -1,0 +1,13 @@
+BEGIN
+// Este es un ejemplo con errores mixtos
+// Error léxico: carácter inválido @ y error sintáctico: falta ;
+MAKE TABLE @usuarios WITH [nombre CHARS, edad INTS]
+// Error léxico: carácter $ y error sintáctico: falta FROM
+PICK nombre$, edad usuarios WHEN edad > 30;
+// Error sintáctico: tipo de dato inválido
+MAKE TABLE productos WITH [nombre CHARS, precio STRING];
+// Error léxico: carácter # y error sintáctico: falta PERMANENTLY
+REMOVE TABLE productos#;
+// Error sintáctico: falta WHERE en la condición
+MODIFY usuarios SET edad = 35 nombre = 'Juan';
+END
